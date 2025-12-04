@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Simulator - Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo_pens_placeholder.png" alt="PENS Logo" class="app-logo">
+                <span class="app-title">Blockchain SIM</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button id="tab-home" class="active">
+                    <i class="fas fa-home"></i> <span>Home</span>
+                </button>
+                <button id="tab-about">
+                    <i class="fas fa-user"></i> <span>About Me</span>
+                </button>
+                <div class="nav-section-title">SIMULATOR MODULES</div>
+                <button id="tab-hash">
+                    <i class="fas fa-hashtag"></i> <span>Hash Generator</span>
+                </button>
+                <button id="tab-block">
+                    <i class="fas fa-cube"></i> <span>Single Block</span>
+                </button>
+                <button id="tab-chain">
+                    <i class="fas fa-link"></i> <span>Block Chain</span>
+                </button>
+                <button id="tab-ecc">
+                    <i class="fas fa-signature"></i> <span>ECC Signature</span>
+                </button>
+                <button id="tab-consensus">
+                    <i class="fas fa-users"></i> <span>Konsensus</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="copyright">© 2024 M. Rafif Z. N.</p>
+            </div>
+        </aside>
+
+        <main class="content-container">
+            <div id="page-home" class="page active">
+                <div class="page-header">
+                    <h1><i class="fas fa-link"></i> Blockchain Learning Platform</h1>
+                    <div class="page-subtitle">Simulator Interaktif Teknologi Blockchain</div>
+                    <div id="datetime" class="datetime-display">
+                        <i class="fas fa-clock"></i> Loading...
+                    </div>
+                </div>
+
+                <div class="card card-wide">
+                    <div class="card-title">
+                        <h3><i class="fas fa-book"></i> Petunjuk Penggunaan</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="intro">Platform ini dirancang untuk membantu memahami konsep dan simulasi berbagai teknik dalam Blockchain Technology. Navigasi menggunakan sidebar di sebelah kiri.</p>
+                        <ul class="feature-list">
+                            <li>Klik pada menu di **Sidebar** untuk memilih simulasi yang ingin dipelajari.</li>
+                            <li>Setiap halaman memiliki interaksi langsung untuk memahami konsep blockchain.</li>
+                            <li>Gunakan tombol bantuan <i class="fas fa-question-circle"></i> di masing-masing modul untuk petunjuk lebih detail.</li>
+                        </ul>
+
+                        <h4 class="section-heading"><i class="fas fa-bars"></i> Modul Simulator:</h4>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <div class="module-icon"><i class="fas fa-hashtag"></i></div>
+                                <strong>Hash</strong>
+                                <p>Generator SHA-256 Hash dengan update real-time.</p>
+                            </div>
+                            <div class="module-item">
+                                <div class="module-icon"><i class="fas fa-cube"></i></div>
+                                <strong>Block</strong>
+                                <p>Simulasi mining blok tunggal dengan kontrol kecepatan.</p>
+                            </div>
+                            <div class="module-item">
+                                <div class="module-icon"><i class="fas fa-link"></i></div>
+                                <strong>Block Chain</strong>
+                                <p>Membangun blockchain dengan multiple blocks.</p>
+                            </div>
+                            <div class="module-item">
+                                <div class="module-icon"><i class="fas fa-signature"></i></div>
+                                <strong>ECC Signature</strong>
+                                <p>Digital signature dengan elliptic curve cryptography.</p>
+                            </div>
+                            <div class="module-item">
+                                <div class="module-icon"><i class="fas fa-users"></i></div>
+                                <strong>Konsensus</strong>
+                                <p>Simulasi mekanisme konsensus dengan 3 user.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-grid-container">
+                    <div class="info-card-v2">
+                        <div class="info-icon-v2"><i class="fas fa-bolt"></i></div>
+                        <h4>Real-time Simulation</h4>
+                        <p>Semua perhitungan hash dan mining dilakukan secara real-time di browser Anda.</p>
+                    </div>
+                    <div class="info-card-v2">
+                        <div class="info-icon-v2"><i class="fas fa-graduation-cap"></i></div>
+                        <h4>Educational</h4>
+                        <p>Dirancang khusus untuk pembelajaran konsep blockchain dari dasar.</p>
+                    </div>
+                    <div class="info-card-v2">
+                        <div class="info-icon-v2"><i class="fas fa-code"></i></div>
+                        <h4>Interactive</h4>
+                        <p>Setiap komponen dapat diinteraksikan untuk memahami prosesnya.</p>
+                    </div>
+                </div>
+
+                <footer class="main-footer">
+                    <p><i class="fas fa-envelope"></i> rafifzaidan@pens.ac.id | <i class="fas fa-globe"></i> Profil Dosen di e-Katalog PENS</p>
+                </footer>
+            </div>
+
+            <div id="page-about" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-user-circle"></i> About Me</h1>
+                    <div class="page-subtitle">Profil dan Informasi Kontak</div>
+                </div>
+
+                <div class="profile-section">
+                    <div class="profile-header-card card">
+                        <img src="foto.jpg" alt="Foto Rafif" class="profile-img">
+                        <div class="profile-details">
+                            <h2>Rakha Zahran Andrian</h2>
+                            <p class="profile-role"><i class="fas fa-graduation-cap"></i> Mahasiswa D4 Teknologi Rekayasa Multimedia - PENS</p>
+                            <div class="contact-links">
+                                <span class="contact-item"><i class="fas fa-phone"></i> (+62) 859-6140-1917</span>
+                                <span class="contact-item"><i class="fas fa-envelope"></i> rakha.zahran3@gmail.com</span>
+                                <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Surabaya, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-bio-card card">
+                        <div class="card-title"><h3><i class="fas fa-quote-left"></i> Biografi Singkat</h3></div>
+                        <p class="bio-text">Mahasiswa aktif D4 Teknologi Rekayasa Multimedia di PENS, dengan minat tinggi pada organisasi, manajemen acara, serta pembuatan konten visual. Mampu beradaptasi cepat, bekerja secara tim maupun mandiri, serta memiliki keinginan kuat untuk terus belajar dan berkembang.</p>
+                    </div>
+                </div>
+
+                <div class="content-grid-2">
+                    <div class="card">
+                        <div class="card-title"><h3><i class="fas fa-history"></i> Riwayat Pendidikan</h3></div>
+                        <div class="card-body">
+                            <div class="timeline-v2">
+                                <div class="timeline-item-v2">
+                                    <span class="timeline-year-v2">2023 - Sekarang</span>
+                                    <div class="timeline-content-v2">
+                                        <h4>D4 Teknologi Rekayasa Multimedia</h4>
+                                        <p>Politeknik Elektronika Negeri Surabaya</p>
+                                        <span class="timeline-badge-v2 on-going">On Going</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item-v2">
+                                    <span class="timeline-year-v2">2020 - 2023</span>
+                                    <div class="timeline-content-v2">
+                                        <h4>SMA-IPA</h4>
+                                        <p>SMA TA'MIRIYAH Surabaya</p>
+                                        <span class="timeline-badge-v2 graduated">Graduated</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title"><h3><i class="fas fa-code-branch"></i> Keterampilan Utama</h3></div>
+                        <div class="card-body">
+                            <div class="skills-list-v2">
+                                <div class="skill-item-v2">
+                                    <i class="fas fa-paint-brush skill-icon-v2"></i>
+                                    <span class="skill-name">Desain Grafis</span>
+                                    <div class="skill-bar-v2"><div class="skill-level-v2" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item-v2">
+                                    <i class="fas fa-bullhorn skill-icon-v2"></i>
+                                    <span class="skill-name">Publikasi</span>
+                                    <div class="skill-bar-v2"><div class="skill-level-v2" style="width: 85%"></div></div>
+                                </div>
+                                <div class="skill-item-v2">
+                                    <i class="fas fa-lightbulb skill-icon-v2"></i>
+                                    <span class="skill-name">Kreatif</span>
+                                    <div class="skill-bar-v2"><div class="skill-level-v2" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-item-v2">
+                                    <i class="fas fa-users skill-icon-v2"></i>
+                                    <span class="skill-name">Kolaborasi Tim</span>
+                                    <div class="skill-bar-v2"><div class="skill-level-v2" style="width: 88%"></div></div>
+                                </div>
+                                <div class="skill-item-v2">
+                                    <i class="fas fa-clock skill-icon-v2"></i>
+                                    <span class="skill-name">Manajemen Waktu</span>
+                                    <div class="skill-bar-v2"><div class="skill-level-v2" style="width: 82%"></div></div>
+                                </div>
+                                <div class="skill-item-v2">
+                                    <i class="fas fa-flag skill-icon-v2"></i>
+                                    <span class="skill-name">Kepemimpinan</span>
+                                    <div class="skill-bar-v2"><div class="skill-level-v2" style="width: 87%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><h3><i class="fas fa-map-marker-alt"></i> Kontak & Lokasi</h3></div>
+                    <div class="card-body contact-map-container">
+                        <div class="contact-form-v2">
+                            <h4><i class="fas fa-comments"></i> Hubungi Saya</h4>
+                            <form id="contactForm">
+                                <div class="form-group-v2">
+                                    <label for="contact-name"><i class="fas fa-user"></i> Nama:</label>
+                                    <input type="text" id="contact-name" placeholder="Nama Anda" required>
+                                </div>
+
+                                <div class="form-group-v2">
+                                    <label for="contact-email"><i class="fas fa-envelope"></i> Email:</label>
+                                    <input type="email" id="contact-email" placeholder="Email Anda" required>
+                                </div>
+
+                                <div class="form-group-v2">
+                                    <label for="contact-message"><i class="fas fa-edit"></i> Pesan:</label>
+                                    <textarea id="contact-message" rows="4" placeholder="Tulis pesan Anda di sini..."
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="button-primary submit-button-v2">
+                                    <i class="fas fa-paper-plane"></i> Kirim Pesan
+                                </button>
+                            </form>
+                        </div>
+                        <div class="location-map-v2">
+                            <h4><i class="fas fa-university"></i> Lokasi Kampus</h4>
+                            <p class="location-text-v2">
+                                Politeknik Elektronika Negeri Surabaya, Jl. Raya ITS, Keputih, Sukolilo, Surabaya
+                            </p>
+                            <div class="map-wrapper-v2">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.513476495616!2d112.79373971477508!3d-7.292900094723939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa183b10b05b%3A0x6a0589a1945a004!2sPoliteknik%20Elektronika%20Negeri%20Surabaya!5e0!3m2!1sid!2sid!4v1636540800000!5m2!1sid!2sid"
+                                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                                <div class="map-overlay-v2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="page-hash" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-hashtag"></i> Hash Generator</h1>
+                    <div class="page-subtitle">SHA-256 Hash Calculator dengan Update Real-time</div>
+                </div>
+
+                <div class="card simulator-card">
+                    <div class="card-title">
+                        <h3><i class="fas fa-calculator"></i> Generator Hash</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group-v2">
+                            <label for="hash-input">
+                                <i class="fas fa-keyboard"></i> Text Input:
+                            </label>
+                            <textarea id="hash-input" rows="4" placeholder="Ketik atau tempel teks di sini..."></textarea>
+                        </div>
+
+                        <div class="hash-display-v2">
+                            <label>
+                                <i class="fas fa-fingerprint"></i> SHA-256 Hash:
+                            </label>
+                            <div id="hash-output" class="output-v2 hash-output-v2">
+                                <div class="hash-placeholder">
+                                    <i class="fas fa-lock"></i> Hash akan muncul di sini
+                                </div>
+                            </div>
+                            <button id="copyHash" class="button-icon copy-button-v2" title="Salin Hash">
+                                <i class="fas fa-copy"></i> Salin
+                            </button>
+                        </div>
+
+                        <div class="hash-examples-v2">
+                            <h4 class="section-heading"><i class="fas fa-lightbulb"></i> Contoh Coba:</h4>
+                            <div class="example-buttons-v2">
+                                <button class="button-secondary example-btn" data-text="Hello, Blockchain!">Hello, Blockchain!</button>
+                                <button class="button-secondary example-btn" data-text="Politeknik Elektronika Negeri Surabaya">PENS</button>
+                                <button class="button-secondary example-btn" data-text="1234567890">Angka 1234567890</button>
+                                <button class="button-secondary example-btn" data-text="Blockchain Technology">Blockchain Technology</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box-v2">
+                    <div class="info-box-icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="info-box-content">
+                        <h4>Informasi SHA-256:</h4>
+                        <p>SHA-256 (Secure Hash Algorithm 256-bit) adalah fungsi hash kriptografi yang menghasilkan nilai hash 256-bit (64 karakter hex).</p>
+                        <ul>
+                            <li>**Deterministik:** Input yang sama selalu menghasilkan hash yang sama</li>
+                            <li>**Avalanche Effect:** Perubahan kecil pada input mengubah hash secara signifikan</li>
+                            <li>**Satu Arah:** Tidak mungkin merekonstruksi input dari hash</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-block" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-cube"></i> Single Block</h1>
+                    <div class="page-subtitle">Simulasi Mining Blok Tunggal Blockchain</div>
+                </div>
+
+                <div class="card simulator-card">
+                    <div class="card-title">
+                        <h3><i class="fas fa-cog"></i> Konfigurasi Blok</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="block-config">
+                            <div class="form-group-v2">
+                                <label for="block-number">
+                                    <i class="fas fa-hashtag"></i> # (Nomor Block):
+                                </label>
+                                <input id="block-number" type="number" min="0" value="0" />
+                            </div>
+
+                            <div class="form-group-v2">
+                                <label for="block-data">
+                                    <i class="fas fa-database"></i> Data:
+                                </label>
+                                <textarea id="block-data" rows="4"
+                                    placeholder="Masukkan data transaksi atau informasi..."></textarea>
+                            </div>
+
+                            <div class="form-group-v2">
+                                <label for="block-nonce">
+                                    <i class="fas fa-sliders-h"></i> Nonce:
+                                </label>
+                                <input id="block-nonce" type="text" maxlength="9" placeholder="Otomatis diisi saat mining" />
+                            </div>
+
+                            <div class="form-group-v2">
+                                <label for="block-timestamp">
+                                    <i class="fas fa-clock"></i> Timestamp:
+                                </label>
+                                <input id="block-timestamp" type="text" readonly class="timestamp-field" />
+                            </div>
+
+                            <div class="form-group-v2">
+                                <label>
+                                    <i class="fas fa-fingerprint"></i> Hash Blok:
+                                </label>
+                                <div id="block-hash" class="output-v2 hash-output-v2">
+                                    <div class="hash-placeholder">
+                                        <i class="fas fa-lock"></i> Hash blok akan muncul setelah mining
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mining-controls">
+                            <div class="mining-header" style="margin-top: 20px;">
+                                <h4 class="section-heading" style="margin-top: 0;"><i class="fas fa-hammer"></i> Kontrol Mining</h4>
+                                <div class="difficulty-indicator" style="font-size: 0.9em; color: var(--warning);">
+                                    <span class="difficulty-label">Kesulitan:</span>
+                                    <span class="difficulty-value">4 Nol di Depan</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group-v2">
+                                <label for="speed-control">
+                                    <i class="fas fa-tachometer-alt"></i> Kecepatan Mining:
+                                </label>
+                                <select id="speed-control" class="speed-select">
+                                    <option value="1">⏱️ Normal</option>
+                                    <option value="10">⚡ 10x Lebih Cepat</option>
+                                    <option value="50">🚀 50x Lebih Cepat</option>
+                                    <option value="100">💫 100x Lebih Cepat</option>
+                                </select>
+                            </div>
+
+                            <div class="action-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                <button id="btn-mine" class="button-primary pulse">
+                                    <i class="fas fa-hammer"></i> Mulai Mining
+                                </button>
+                                <button id="btn-reset" class="button-secondary">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div id="mining-status" class="output-v2" style="margin-top: 10px; font-size: 0.9em; min-height: 40px;">
+                                <div class="status-placeholder">
+                                    <i class="fas fa-info-circle"></i> Klik "Mulai Mining" untuk memulai proses
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box-v2">
+                    <div class="info-box-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="info-box-content">
+                        <h4>Konsep Mining:</h4>
+                        <p>Mining adalah proses menemukan nilai nonce yang membuat hash blok memenuhi kriteria kesulitan (dimulai dengan 4 angka nol).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-chain" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-link"></i> Blockchain</h1>
+                    <div class="page-subtitle">Membangun Rantai Blok dengan Multiple Blocks</div>
+                </div>
+
+                <div class="card simulator-card">
+                    <div class="card-title">
+                        <h3><i class="fas fa-project-diagram"></i> Blockchain Simulator</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chain-info" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 15px; background: var(--bg-card-hover); border-radius: 8px; margin-bottom: 20px;">
+                            <div class="chain-stats">
+                                <div class="stat-item" style="text-align: center;">
+                                    <div class="stat-icon" style="font-size: 1.5em; color: var(--primary);"><i class="fas fa-cube"></i></div>
+                                    <div class="stat-content">
+                                        <div class="stat-value" id="blockCount">1</div>
+                                        <div class="stat-label" style="font-size: 0.8em; color: var(--text-muted);">Total Blocks</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chain-stats">
+                                <div class="stat-item" style="text-align: center;">
+                                    <div class="stat-icon" style="font-size: 1.5em; color: var(--secondary);"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="stat-content">
+                                        <div class="stat-value" id="validBlocks">1</div>
+                                        <div class="stat-label" style="font-size: 0.8em; color: var(--text-muted);">Valid Blocks</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chain-stats">
+                                <div class="stat-item" style="text-align: center;">
+                                    <div class="stat-icon" style="font-size: 1.5em; color: var(--info);"><i class="fas fa-link"></i></div>
+                                    <div class="stat-content">
+                                        <div class="stat-value" id="chainLength">0</div>
+                                        <div class="stat-label" style="font-size: 0.8em; color: var(--text-muted);">Chain Length</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blockchain-container" id="blockchain">
+                            </div>
+
+                        <div class="chain-controls" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
+                            <button id="btn-add-block" class="button-primary">
+                                <i class="fas fa-plus-circle"></i> Tambah Block Baru
+                            </button>
+                            <button id="btn-validate-chain" class="button-secondary">
+                                <i class="fas fa-check-circle"></i> Validasi Blockchain
+                            </button>
+                            <button id="btn-clear-chain" class="button-secondary" style="background: var(--danger); color: white; border: none;">
+                                <i class="fas fa-trash"></i> Hapus Semua
+                            </button>
+                        </div>
+
+                        <div id="chain-validation" class="output-v2" style="margin-top: 20px; font-size: 0.9em; min-height: 40px;">
+                            <div class="validation-placeholder">
+                                <i class="fas fa-clipboard-check"></i> Klik "Validasi Blockchain" untuk memeriksa integritas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box-v2">
+                    <div class="info-box-icon"><i class="fas fa-link"></i></div>
+                    <div class="info-box-content">
+                        <h4>Konsep Blockchain:</h4>
+                        <p>Blockchain adalah rantai blok yang saling terhubung di mana setiap blok berisi hash dari blok sebelumnya, menciptakan keamanan melalui imutabilitas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-ecc" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-signature"></i> ECC Digital Signature</h1>
+                    <div class="page-subtitle">Elliptic Curve Cryptography Signature Verification</div>
+                </div>
+
+                <div class="card simulator-card">
+                    <div class="card-title">
+                        <h3><i class="fas fa-key"></i> Key Pair Generation</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="key-generation">
+                            <button id="btn-generate-key" class="button-primary" style="background: #9c27b0;">
+                                <i class="fas fa-key"></i> Generate Key Pair
+                            </button>
+                            <p class="key-info" style="font-size: 0.9em; color: var(--text-muted); margin-top: 10px;">
+                                <i class="fas fa-info-circle"></i> Public Key dan Private Key dapat diedit untuk percobaan.
+                            </p>
+
+                            <div class="key-pair-container" style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div class="key-input" style="flex: 1;">
+                                    <label>
+                                        <i class="fas fa-lock-open"></i> Public Key:
+                                    </label>
+                                    <textarea id="ecc-public" rows="3" placeholder="Public key akan di-generate..."></textarea>
+                                </div>
+                                <div class="key-input" style="flex: 1;">
+                                    <label>
+                                        <i class="fas fa-lock"></i> Private Key:
+                                        <span style="color: var(--danger); font-size: 0.9em;">(Jangan dibagikan!)</span>
+                                    </label>
+                                    <textarea id="ecc-private" rows="3"
+                                        placeholder="Private key akan di-generate..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-divider" style="text-align: center; margin: 30px 0; border-bottom: 1px solid var(--border-color);">
+                            <span style="background: var(--bg-card); padding: 0 10px; color: var(--primary); position: relative; top: 10px;">Sign Message</span>
+                        </div>
+
+                        <div class="sign-section">
+                            <div class="input-group-v2">
+                                <label>
+                                    <i class="fas fa-envelope"></i> Pesan yang akan ditandatangani:
+                                </label>
+                                <textarea id="ecc-message" rows="3"
+                                    placeholder="Masukkan pesan untuk ditandatangani..."></textarea>
+                            </div>
+
+                            <button id="btn-sign" class="button-primary" style="background: var(--secondary);">
+                                <i class="fas fa-signature"></i> Sign Message
+                            </button>
+
+                            <div class="signature-output" style="margin-top: 20px;">
+                                <label>
+                                    <i class="fas fa-file-signature"></i> Hasil Signature (DER hex):
+                                </label>
+                                <textarea id="ecc-signature" rows="3" readonly
+                                    placeholder="Signature akan muncul di sini..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="section-divider" style="text-align: center; margin: 30px 0; border-bottom: 1px solid var(--border-color);">
+                            <span style="background: var(--bg-card); padding: 0 10px; color: var(--primary); position: relative; top: 10px;">Verify Signature</span>
+                        </div>
+
+                        <div class="verify-section">
+                            <button id="btn-verify" class="button-primary" style="background: var(--info);">
+                                <i class="fas fa-check-double"></i> Verify Signature
+                            </button>
+                            <div id="ecc-verify-result" class="output-v2" style="margin-top: 15px;">
+                                <div class="verify-placeholder">
+                                    <i class="fas fa-question-circle"></i> Klik "Verify Signature" untuk memeriksa validitas
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box-v2">
+                    <div class="info-box-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="info-box-content">
+                        <h4>Tentang ECC:</h4>
+                        <p>Elliptic Curve Cryptography (ECC) adalah metode kriptografi kunci publik yang menggunakan kurva eliptik. ECC memberikan keamanan yang sama dengan RSA tetapi dengan ukuran kunci yang lebih kecil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-consensus" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-users"></i> Konsensus Simulator</h1>
+                    <div class="page-subtitle">Simulasi Mekanisme Konsensus Blockchain dengan 3 Node</div>
+                </div>
+
+                <div class="card simulator-card">
+                    <div class="card-title">
+                        <h3><i class="fas fa-wallet"></i> Dompet Pengguna</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="wallets" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                            <div class="wallet" data-user="A" style="background: var(--bg-card-hover); padding: 15px; border-radius: 8px;">
+                                <div class="wallet-header">
+                                    <h3 style="color: var(--primary);">User A</h3>
+                                </div>
+                                <div class="wallet-balance">
+                                    <div class="balance-amount">
+                                        <div class="balance-label" style="font-size: 0.8em; color: var(--text-muted);">Saldo</div>
+                                        <div class="balance-value" id="saldo-A" style="font-size: 1.5em; font-weight: 700; color: var(--success);">100</div>
+                                    </div>
+                                </div>
+                                <div class="wallet-controls">
+                                    <div class="form-group-v2">
+                                        <label style="font-size: 0.8em;"><i class="fas fa-paper-plane"></i> Penerima:</label>
+                                        <select id="receiver-A" class="receiver-select">
+                                            <option value="B">👤 User B</option>
+                                            <option value="C">👤 User C</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group-v2">
+                                        <label style="font-size: 0.8em;"><i class="fas fa-coins"></i> Jumlah:</label>
+                                        <input id="amount-A" type="number" min="1" value="10" class="amount-input" />
+                                    </div>
+                                    <button id="send-A" class="button-secondary" style="width: 100%;">
+                                        <i class="fas fa-paper-plane"></i> Kirim
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="wallet" data-user="B" style="background: var(--bg-card-hover); padding: 15px; border-radius: 8px;">
+                                <div class="wallet-header">
+                                    <h3 style="color: var(--primary);">User B</h3>
+                                </div>
+                                <div class="wallet-balance">
+                                    <div class="balance-amount">
+                                        <div class="balance-label" style="font-size: 0.8em; color: var(--text-muted);">Saldo</div>
+                                        <div class="balance-value" id="saldo-B" style="font-size: 1.5em; font-weight: 700; color: var(--success);">100</div>
+                                    </div>
+                                </div>
+                                <div class="wallet-controls">
+                                    <div class="form-group-v2">
+                                        <label style="font-size: 0.8em;"><i class="fas fa-paper-plane"></i> Penerima:</label>
+                                        <select id="receiver-B" class="receiver-select">
+                                            <option value="A">👤 User A</option>
+                                            <option value="C">👤 User C</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group-v2">
+                                        <label style="font-size: 0.8em;"><i class="fas fa-coins"></i> Jumlah:</label>
+                                        <input id="amount-B" type="number" min="1" value="10" class="amount-input" />
+                                    </div>
+                                    <button id="send-B" class="button-secondary" style="width: 100%;">
+                                        <i class="fas fa-paper-plane"></i> Kirim
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="wallet" data-user="C" style="background: var(--bg-card-hover); padding: 15px; border-radius: 8px;">
+                                <div class="wallet-header">
+                                    <h3 style="color: var(--primary);">User C</h3>
+                                </div>
+                                <div class="wallet-balance">
+                                    <div class="balance-amount">
+                                        <div class="balance-label" style="font-size: 0.8em; color: var(--text-muted);">Saldo</div>
+                                        <div class="balance-value" id="saldo-C" style="font-size: 1.5em; font-weight: 700; color: var(--success);">100</div>
+                                    </div>
+                                </div>
+                                <div class="wallet-controls">
+                                    <div class="form-group-v2">
+                                        <label style="font-size: 0.8em;"><i class="fas fa-paper-plane"></i> Penerima:</label>
+                                        <select id="receiver-C" class="receiver-select">
+                                            <option value="A">👤 User A</option>
+                                            <option value="B">👤 User B</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group-v2">
+                                        <label style="font-size: 0.8em;"><i class="fas fa-coins"></i> Jumlah:</label>
+                                        <input id="amount-C" type="number" min="1" value="10" class="amount-input" />
+                                    </div>
+                                    <button id="send-C" class="button-secondary" style="width: 100%;">
+                                        <i class="fas fa-paper-plane"></i> Kirim
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-pool" style="margin-top: 30px;">
+                            <div class="pool-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 class="section-heading" style="margin: 0;"><i class="fas fa-inbox"></i> Mempool (Pending Transactions)</h4>
+                                <span class="pool-count" id="txCount" style="font-size: 0.9em; color: var(--primary);">0 transaksi</span>
+                            </div>
+                            <textarea id="mempool" rows="3"
+                                placeholder="Setiap transaksi di baris baru. Contoh: A -> B:10"></textarea>
+                            <div class="pool-actions" style="display: flex; gap: 10px; margin-top: 10px;">
+                                <button id="btn-clear-pool" class="button-secondary" style="background: var(--danger); color: white; border: none;">
+                                    <i class="fas fa-trash"></i> Kosongkan
+                                </button>
+                                <button id="btn-validate-tx" class="button-secondary" style="background: var(--info); color: white; border: none;">
+                                    <i class="fas fa-check"></i> Validasi
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="consensus-actions" style="margin-top: 30px;">
+                            <div class="action-header">
+                                <h4 class="section-heading" style="margin-top: 0;"><i class="fas fa-cogs"></i> Aksi Blockchain</h4>
+                            </div>
+                            <div class="action-buttons" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <button id="btn-mine-all" class="button-primary" style="background: var(--warning); color: var(--bg-dark);">
+                                    <i class="fas fa-hammer"></i> Mine Semua Transaksi
+                                </button>
+                                <button id="btn-verify-consensus" class="button-secondary" style="background: var(--info); color: white; border: none;">
+                                    <i class="fas fa-check-circle"></i> Verify Blockchain
+                                </button>
+                                <button id="btn-consensus" class="button-secondary" style="background: var(--secondary); color: white; border: none;">
+                                    <i class="fas fa-users"></i> Run Consensus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <h3><i class="fas fa-database"></i> Blockchain Tiap Node</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="node-tabs" style="display: flex; margin-bottom: 15px;">
+                            <button class="node-tab active" data-node="A">Node A</button>
+                            <button class="node-tab" data-node="B">Node B</button>
+                            <button class="node-tab" data-node="C">Node C</button>
+                        </div>
+
+                        <div class="chains-container">
+                            <div id="node-A-chain" class="node-chain active">
+                                <h4 class="section-heading"><i class="fas fa-server"></i> Database Node A</h4>
+                                <div id="chain-A" class="chain-row"></div>
+                            </div>
+                            <div id="node-B-chain" class="node-chain" style="display: none;">
+                                <h4 class="section-heading"><i class="fas fa-server"></i> Database Node B</h4>
+                                <div id="chain-B" class="chain-row"></div>
+                            </div>
+                            <div id="node-C-chain" class="node-chain" style="display: none;">
+                                <h4 class="section-heading"><i class="fas fa-server"></i> Database Node C</h4>
+                                <div id="chain-C" class="chain-row"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box-v2">
+                    <div class="info-box-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="info-box-content">
+                        <h4>Tentang Konsensus:</h4>
+                        <p>Konsensus adalah mekanisme di mana semua node dalam jaringan blockchain menyetujui keadaan yang sama dari ledger.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <div id="toast" class="toast-v2">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message">Berhasil!</span>
+        </div>
+    </div>
+
+    <div id="loading" class="loading-overlay-v2">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+            </div>
+            <div class="loading-text">Processing...</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
